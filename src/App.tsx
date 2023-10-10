@@ -4,10 +4,12 @@ import { Home } from './Pages/Home';
 import CraeteBlog from './Pages/CraeteBlog';
 import About from './Pages/About';
 import { NavBarBs} from './Components/NavBarBs';
+import { MenuBarProvider } from './Context/MenuBarContext';
 
 function App() {
   return (
     <>
+    <MenuBarProvider>
    <NavBarBs/>
     <Container>
     <Routes>
@@ -16,7 +18,7 @@ function App() {
       <Route path='/About' element={<About/>}></Route>
     </Routes>
    </Container>
-   
+   </MenuBarProvider>
    </>
   );
 }

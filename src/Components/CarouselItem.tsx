@@ -18,7 +18,7 @@ export function  CarouselItem({id, src, title, intro, content}:CarouselItemProps
       <div className='d-block p-3 me-auto' >
         <Card.Title className='fw-bold fs-2 p-2' >{title}</Card.Title>
         <Card.Text className='text-muted fs-6'>{intro}</Card.Text>
-        <div className='d-flex'>
+        <div className='d-flex p-3'>
           <img src='/images/pic.jpg' className='rounded-circle me-1' width='50px' height='50px'/>
           <div >
             <p><strong>Blogger123</strong> <br /> CEO and Founder </p>
