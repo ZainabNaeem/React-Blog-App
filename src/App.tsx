@@ -1,7 +1,7 @@
 import {Routes, Route} from 'react-router-dom'
 import { Container } from 'react-bootstrap';
 import { Home } from './Pages/Home';
-import CraeteBlog from './Pages/CraeteBlog';
+import {CraeteBlog }from './Pages/CraeteBlog';
 import About from './Pages/About';
 import { NavBarBs} from './Components/NavBarBs';
 import { MenuBarProvider } from './Context/MenuBarContext';
