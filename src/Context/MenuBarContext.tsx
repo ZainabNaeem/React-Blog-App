@@ -1,36 +1,35 @@
-import { ReactNode, createContext, useContext, useState } from "react";
-import { MenuSideBar } from "../Components/MenuBar";
+import { ReactNode, createContext, useContext, useState } from 'react'
+import { MenuSideBar } from '../Components/MenuBar'
 
 type MenuBarContext = {
-  openCart:()=>void
-  closeCart:()=>void
+  openCart: () => void
+  closeCart: () => void
 }
-type MenuBarProviderProps={
+type MenuBarProviderProps = {
   children: ReactNode
 }
 
 const MenuBarContext = createContext({} as MenuBarContext)
 
-export function MenuBar(){
+export function MenuBar() {
   return useContext(MenuBarContext)
 }
 
-export function MenuBarProvider({children}:MenuBarProviderProps){
+export function MenuBarProvider({ children }: MenuBarProviderProps) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const openCart = ()=>setIsOpen(true)
-  const closeCart = ()=>setIsOpen(false)
+  const openCart = () => setIsOpen(true)
+  const closeCart = () => setIsOpen(false)
 
-
-return(
-  <MenuBarContext.Provider
-  value={{
-    openCart,
-    closeCart
-  }}
-  >
-    {children}
-  <MenuSideBar isOpen={isOpen}/>
+  return (
+    <MenuBarContext.Provider
+      value={{
+        openCart,
+        closeCart,
+      }}
+    >
+      {children}
+      <MenuSideBar isOpen={isOpen} />
     </MenuBarContext.Provider>
-)
+  )
 }
